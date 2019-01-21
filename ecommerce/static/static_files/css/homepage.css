@@ -1,0 +1,95 @@
+body{
+  font-family: 'Muli', sans-serif;
+}
+
+.product{
+  width:30vw;
+  margin:50px auto;
+  box-shadow:0px 0px 20px #efecec;
+  position:relative;
+}
+
+.product .entry{
+  padding: 5px 30px;
+}
+
+.product img{
+  width:60%;
+  margin:auto;
+}
+
+.product .close{
+  position:absolute;
+  width:30px;
+  height:30px;
+  background-color:#2a2e33;
+  right:15px;
+  top:15px;
+  cursor: pointer;
+}
+.product .close::before{
+  content:'';
+  background-color: #000;
+  width:100%;
+  height:3px;
+  position:absolute;
+  border-radius:30px;
+  transform:rotate(45deg);
+}
+.product .close::after{
+  content:'';
+  background-color: #000;
+  width:100%;
+  height:3px;
+  position:absolute;
+  border-radius:30px;
+  transform:rotate(-45deg);
+}
+
+.product h3{
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-position: center center;
+    background-image: url(http://www.viteco.it/media/import/Images-5/main.png);
+  font-size:2em;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.product .price{
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  display:block;
+}
+
+.product .button{
+  display:inline-block;
+  padding: 8px 25px;
+  border: 1px solid #000;
+  margin-top: 20px;
+  cursor:pointer;
+  transition:.7s;
+  position:relative;
+}
+
+.product .button::after{
+  transition:.5s;
+  content:'';
+  z-index:-1;
+  background-color:#2a2e33;
+  width: 100%;
+  height:100%;
+  position:absolute;
+  top:20px;
+  right:-90px;
+}
+
+.product .button:hover:after{
+  top:0px;
+  right:0px;
+}
+
+.product .button:hover{
+  color:#fff;
+  border-color: #2a2e33;
+}

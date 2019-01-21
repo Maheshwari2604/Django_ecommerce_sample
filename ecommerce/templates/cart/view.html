@@ -1,0 +1,56 @@
+{% include 'products/base.html' %}
+
+
+<br>
+
+<div class="container">
+{% if empty %}
+    <h1>{{  message }}</h1>
+{% endif %}
+
+    <div class='col-sm-8 col-sm-offset-2'>
+        <table class="table">
+
+         <thead>
+            <th>    
+                Name of products
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                price
+            </th>
+            
+        </thead>
+        <tfoot>
+            <td><strong>Total:</strong></td>
+            <td></td>
+            <td><strong>{{ cart.Total }}</strong></td>
+        </tfoot>
+        {% for item in cart.cartitem_set.all %}
+        <tr>
+            <td>
+                {{ item.product }}
+            </td>
+            <td>
+                {{ item.quantity }}
+            </td>
+            <td>
+                {{ item.product.price }}
+            </td>
+            <td>
+                <a href="{% url 'cart_update' item.product.slug %}?qty=0">
+                Remove
+                </a>
+            </td>
+        </tr>    
+        {% endfor %}
+        </table>
+
+
+        
+    <div class="page-header">
+        <a href="{% url 'checkout' %}"><b>Checkout</b></a>
+    </div>
+</div>

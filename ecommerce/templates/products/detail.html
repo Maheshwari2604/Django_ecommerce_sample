@@ -1,0 +1,15 @@
+
+{% include 'products/base.html' %}
+
+<div class="container">
+    <div class="jumbotron">
+{% for item in details.productimage_set.all %}
+    <img src="{{ MEDIA_URL }}{{ item.image }}" style="width:100%; height: 100%;">
+{% endfor %}
+
+<h1>Title: {{details.title}}</h1>
+<h1>Description: {{details.description}}</h1>
+<h1>Price: {{details.price}}</h1>
+</div>
+
+</div>
